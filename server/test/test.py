@@ -1,14 +1,29 @@
+#coding: utf-8
 __author__ = 'sunwenchao'
 
-q = [2, 3]
-w = '123123'
+import os
 
-def ca(aaa, t):
-    aaa.append('a')
-    t = '123'
+dirname = os.path.dirname
 
-ca(q, w)
+def isRunYear(year):
+    ret = False
+    if year % 400 == 0 or (year % 4 == 0 and year % 100 != 0):
+        ret = True
+    return ret
 
-w = '1222'
+# print isRunYear(2001)
 
-print q, w
+# for v in range(1, 100):
+#     isSu = True
+#     for j in range(1, 100):
+#         if j == 1 or j == v:
+#             continue
+#         if v % j == 0:
+#             isSu = False
+#     if isSu and v != 1:
+#         print v
+
+rootDir = dirname(dirname(dirname(__file__)))
+print os.path.abspath(rootDir)
+for root, dirs, files in os.walk(rootDir):
+    print root, dirs, files
