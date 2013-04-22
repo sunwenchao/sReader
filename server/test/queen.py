@@ -36,6 +36,9 @@ def findQueen(existList, curRow):
             existList: 已确定的 之前行的 皇后位置列表
             curRow: 当前查找行
     """
+    global resultList
+    global queenNum
+
     if curRow > queenNum:
         resultList.append(existList)
     else:

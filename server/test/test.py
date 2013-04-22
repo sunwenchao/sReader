@@ -23,7 +23,30 @@ def isRunYear(year):
 #     if isSu and v != 1:
 #         print v
 
+fileMap = {}
 rootDir = dirname(dirname(dirname(__file__)))
 print os.path.abspath(rootDir)
 for root, dirs, files in os.walk(rootDir):
-    print root, dirs, files
+    for v in files:
+        size = os.stat(os.path.join(root, v)).st_size
+        if fileMap.has_key(size):
+            fileMap[size].append(v)
+        else:
+            fileMap[size] = [v]
+keyArr = fileMap.keys()
+keyArr.sort(reverse=True)
+for v in keyArr[:3]:
+    print fileMap[v]
+
+
+# x = 50
+# def func():
+#     global x
+#     x = 2
+#     print 'x is', x
+#
+#     print 'Changed local x to', x
+#
+#
+# func()
+# print 'Value of x is', x
