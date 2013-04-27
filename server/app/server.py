@@ -4,10 +4,10 @@ import tornado.ioloop
 import tornado.web
 
 from config import routing
-from config import environment
+from config import server
 
-application = tornado.web.Application(routing.routingList, **environment.serverSettings)
+application = tornado.web.Application(routing.routingList, **server.serverSettings)
 
 def init():
-    application.listen(9000)
+    application.listen(server.SERVER_PORT)
     tornado.ioloop.IOLoop.instance().start()
