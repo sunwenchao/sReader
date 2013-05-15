@@ -13,9 +13,4 @@ logging.basicConfig(
     datefmt=DATE_FORMAT
 )
 
-defaultLogger = logging.getLogger('sreader')
-
-
-# exc_info=True to have stack
-def getLogger():
-    return defaultLogger
+logger = logging.getLogger('sreader')

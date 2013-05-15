@@ -1,16 +1,17 @@
 # -*- coding: utf-8 -*-
 from sqlalchemy import Column
 from sqlalchemy.types import *
-from sqlalchemy.ext.declarative import declarative_base
+from utils import database
 
-SqlBaseModel = declarative_base()
+DataBaseModel = database.DataBaseModel
 
-#
-# class BaseModel(SqlBaseModel):
-#
-#     __tablename__ = 'default'
-#
-#     id = Column(Integer, primary_key=True)
-#     pass
+db_session = database.getSession()
+
+
+class BaseModel():
+
+
+
+    pass
 
 

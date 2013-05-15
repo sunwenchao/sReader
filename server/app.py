@@ -3,8 +3,10 @@ import os
 import sys
 
 # 设置系统编码为 utf8
-reload(sys)
-sys.setdefaultencoding('utf8')
+default_encoding = 'utf-8'
+if sys.getdefaultencoding() != default_encoding:
+    reload(sys)
+    sys.setdefaultencoding(default_encoding)
 
 
 # 加入根目录

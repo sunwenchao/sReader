@@ -1,9 +1,8 @@
 # -*- coding: utf-8 -*-
+import tornado
+from controllers import base_handler
 
-import tornado.web
-from config import environment
-
-class MainHandler(tornado.web.RequestHandler):
+class MainHandler(base_handler.BaseHandler):
 
     @tornado.web.authenticated
     def get(self):
